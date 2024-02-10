@@ -23,11 +23,11 @@ public class LibraryController {
 
     @RequestMapping("/people")
     public String index(Model model) {
-        model.addAttribute("people", personDAO.index());
+        model.addAttribute("person", personDAO.index());
         return "people/index";
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/people/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("people", personDAO.show(id));
         return "people/show";

@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Entity
-@Table(name = "people")
+@Table(name = "Person")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
