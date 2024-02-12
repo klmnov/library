@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>User</title>
 </head>
-<body>
-<p th:text="${person.getFullName()}">VALUE</p>
-<p th:text="${person.getId()}">VALUE</p>
-</body>
+    <body>
+        <h2>
+            <p th:text="${person.getFullName() + ', ' + person.getYearOfBirth()}">VALUE</p>
+            <p th:text="${person.getId()}">VALUE</p>
+        </h2>
+        <hr>
+        <a th:href="@{{id}(person.getId())/edit}">Edit person</a>
+    </body>
 </html>
