@@ -21,6 +21,9 @@ public class Person {
     @Column(name = "year_of_birth")
     private int yearOfBirth;
 
+    @OneToOne(mappedBy = "reader")
+    private Book personBook;
+
     public Person(String fullName, int yearOfBirth) {
         this.fullName = fullName;
         this.yearOfBirth = yearOfBirth;

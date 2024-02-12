@@ -19,10 +19,15 @@ public class BookDAO {
         this.sessionFactory = sessionFactory;
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public List<Book> index() {
         Session session = sessionFactory.getCurrentSession();
-        return session.createQuery("select b from book b", Book.class).getResultList();
+        return session.createQuery("select p from Book p", Book.class).getResultList();
     }
 
+    @Transactional(readOnly = true)
+    public Book show(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        return session.get(Book.class, id);
+    }
 }
